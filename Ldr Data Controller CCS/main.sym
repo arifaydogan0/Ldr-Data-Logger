@@ -1,0 +1,181 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006     lcd
+006     lcdlat
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 ldrdata
+022-025 ldrdirenc
+026-027 @sprintf_string
+028     MAIN.x
+029     MAIN.saat
+02A     MAIN.dakika
+02B     MAIN.saniye
+02C     MAIN.a
+02D     MAIN.@SCRATCH1
+02E     MAIN.@SCRATCH2
+02F     MAIN.@SCRATCH3
+030     MAIN.@SCRATCH4
+031     MAIN.@SCRATCH5
+032     MAIN.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+110-16F MAIN.zaman
+195-198 @MUL3232.P1
+195-196 @MUL1616.P2
+195-198 @PRINTF_L32U_646.P3
+195     lcd_init.i
+195     @PSTRINGC7_646.@SCRATCH1
+196-199 lcd_init.LCD_INIT_STRING
+196     @PSTRINGC7_646.@SCRATCH2
+197-198 @MUL1616.P1
+197     @PSTRINGC7_646.@SCRATCH3
+198-199 @PRINTF_LU_646.P1
+198     @PRINTF_D_646.P2
+198     @PSTRINGCN7_646.P3
+198     @PSTRINGC7_646.@SCRATCH4
+199-19A @DIV1616.P1
+199     @PRINTF_D_646.P2
+199-19C @MUL3232.P3
+199     @PRINTF_L32U_646.@SCRATCH1
+199     @PSTRINGCN7_646.@SCRATCH1
+199     @MUL1616.@SCRATCH1
+19A     lcd_init.@SCRATCH1
+19A     @PRINTF_L32U_646.@SCRATCH2
+19A     @PSTRINGCN7_646.@SCRATCH2
+19A     @PRINTF_D_646.@SCRATCH1
+19A     @PRINTF_LU_646.@SCRATCH1
+19B-19C @DIV1616.P1
+19B     @PRINTF_L32U_646.@SCRATCH3
+19B     @PSTRINGCN7_646.@SCRATCH3
+19B     @PRINTF_D_646.@SCRATCH2
+19B     @PRINTF_LU_646.@SCRATCH2
+19C     @PRINTF_L32U_646.@SCRATCH4
+19C     @PSTRINGCN7_646.@SCRATCH4
+19C     @PRINTF_D_646.@SCRATCH3
+19C     @PRINTF_LU_646.@SCRATCH3
+19D     @MUL3232.@SCRATCH1
+19D     @PRINTF_L32U_646.@SCRATCH5
+19D     @DIV1616.@SCRATCH1
+19D     @PRINTF_D_646.@SCRATCH4
+19D     @PRINTF_LU_646.@SCRATCH4
+19E     @DIV88.P1
+19E     @MUL3232.@SCRATCH2
+19E     @PRINTF_L32U_646.@SCRATCH6
+19E     @PRINTF_LU_646.@SCRATCH5
+19F     @DIV88.P1
+19F     @MUL3232.@SCRATCH3
+19F     @PRINTF_L32U_646.@SCRATCH7
+19F     @PRINTF_LU_646.@SCRATCH6
+1A0     @MUL3232.@SCRATCH4
+1A0     @PRINTF_L32U_646.@SCRATCH8
+1A0     @DIV88.@SCRATCH1
+1A0     @PRINTF_LU_646.@SCRATCH7
+1A1     lcd_putc.c
+1A1-1A4 @DIV3232.P1
+1A1     @MUL3232.@SCRATCH5
+1A2     @delay_ms1.P1
+1A2     lcd_gotoxy.x
+1A3     lcd_gotoxy.y
+1A4     lcd_gotoxy.address
+1A5-1A8 @DIV3232.P1
+1A5     lcd_gotoxy.@SCRATCH1
+1A6     lcd_send_byte.address
+1A7     lcd_send_byte.n
+1A8     lcd_read_byte.low
+1A8     lcd_send_byte.@SCRATCH1
+1A9     lcd_send_nibble.n
+1A9     lcd_read_byte.high
+1A9     @DIV3232.@SCRATCH1
+1AA     lcd_read_byte.@SCRATCH1
+1AA     @DIV3232.@SCRATCH2
+1AB     @DIV3232.@SCRATCH3
+1AC     @DIV3232.@SCRATCH4
+1AD     @DIV3232.@SCRATCH5
+
+ROM Allocation:
+000004  @const664.call
+00000D  @const669.call
+000016  @const677.call
+00001C  @const682.call
+000025  @const683.call
+00002A  @const695.call
+000032  @const703.call
+00003C  @const704.call
+000045  @const706.call
+00004C  @const709.call
+000053  @const710.call
+00005C  @const711.call
+000065  @delay_ms1
+00007A  lcd_send_nibble
+00008A  lcd_read_nibble
+000090  lcd_send_byte
+000096  lcd_read_byte
+0000EF  lcd_init
+00014B  lcd_gotoxy
+000161  lcd_putc
+0001A9  @PSTRINGC7_646
+000215  @MUL3232
+000245  @DIV3232
+000298  @PRINTF_L32U_646
+000306  @PSTRINGCN7_646
+000379  @MUL1616
+000394  @DIV1616
+0003BF  @DIV88
+0003D8  @PRINTF_D_646
+000447  @PRINTF_LU_646
+0004B2  MAIN
+000800  @cinit1
+00080C  @cinit2
+082B  menu
+0848  olcum
+
+Project Directory:
+    C:\Users\belge\Desktop\Ldr Data Logger C\
+
+Project Files:
+    main.c                                                  [01-Oca-19 19:29  CRC=F46D0595]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h  [02-Oca-15 14:37  CRC=03F3FC2C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c      [19-Eyl-13 15:38  CRC=D1A6378A]
+
+Source signature=9BAD70D5
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=5D12
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

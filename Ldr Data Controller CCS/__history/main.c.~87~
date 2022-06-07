@@ -1,0 +1,125 @@
+#include <16F877A.h>
+#device ADC=10
+#fuses XT, NOWDT, NOPROTECT
+#use delay(clock=4000000)
+#define use_portb_lcd TRUE 
+#include <lcd.c>
+
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#use fast_io(d)
+
+int16 ldrdata;
+unsigned int32 ldrdirenc;
+
+
+void main()
+{
+set_tris_a(0xFF);
+set_tris_b(0x00);
+set_tris_c(0xFF);
+set_tris_d(0xF3);
+
+output_b(0x00);
+output_low(pin_d2);
+output_low(pin_d3);
+
+setup_ADC(ADC_CLOCK_INTERNAL);
+setup_ADC_ports(ALL_ANALOG);
+
+lcd_init();
+
+menu:
+printf(lcd_putc,"\f1)Surekli olcum");
+delay_ms(50);
+printf(lcd_putc,"\n2)Kaydetme modu");
+
+
+
+   while(1)
+   {
+
+if(input(pin_d0)==1)
+{
+olcum:
+if(input(pin_c1)==1){goto menu;}
+set_ADC_channel(0);
+delay_us(30);
+ldrdata=read_adc();
+ldrdirenc=(ldrdata*100000)/(1023-ldrdata);
+
+
+printf(lcd_putc,"\fR=%lu ohm ", ldrdirenc);
+delay_ms(750);
+goto olcum;
+
+
+}
+
+else if(input(pin_d1)==1)
+{
+printf(lcd_putc,"\fTimer: 30 dakika");
+printf(lcd_putc,"\n5)Basla");
+while(1)
+{
+if(input(pin_c0)==1)
+{break;}
+}
+unsigned int16 zaman[48]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,};
+
+for(int x=0; x<48; x++)
+  { 
+int saat=0;
+set_ADC_channel(0);
+delay_us(30);
+ldrdata=read_adc();
+ldrdirenc=(ldrdata*100)/(1023-ldrdata);
+if(ldrdirenc>65500){ldrdirenc=0;}
+zaman[x]=ldrdirenc;
+for (int dakika=0;j<30;j++)
+{
+for (int saniye=0;i<60;i++)
+{delay_ms(1000);
+printf(lcd_putc,"\f%d)%lu k ohm ", x,ldrdirenc);
+printf(lcd_putc,"\n%d:%d:%d ", saat,dakika,saniye);
+}
+}
+
+ 
+  }
+  
+printf(lcd_putc,"\fOlcum tamamlandi.");
+printf(lcd_putc,"\n1)Sonucu goster");
+while(1)
+{ 
+  output_high(pin_d2);
+  output_high(pin_d3);
+  delay_ms(500);
+  output_low(pin_d2);
+  output_low(pin_d3);
+  delay_ms(500);
+  if(input(pin_d0)==1) {break;}
+}
+
+int a=0;
+while(1)
+  {
+   printf(lcd_putc,"\f%d)%lu k ohm", a,zaman[a]);
+   delay_ms(1111);
+   printf(lcd_putc,"\n%d)%lu k ohm", a+1,zaman[a+1]);
+   delay_ms(1111);
+   a++;
+   if(a==46){a=0;}
+   if(input(pin_c1)==1){break;}
+  }
+printf(lcd_putc,"\f1)Surekli olcum");
+delay_ms(50);
+printf(lcd_putc,"\n2)Kaydetme modu");
+
+}
+
+}
+
+}
+

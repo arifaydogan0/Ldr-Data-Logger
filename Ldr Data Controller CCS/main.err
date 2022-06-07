@@ -1,0 +1,7 @@
+>>> Warning 203 "main.c" Line 40(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 64(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 95(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 107(1,1): Condition always TRUE
+      Memory usage:   ROM=26%      RAM=33% - 82%
+      0 Errors,  4 Warnings.
+Build Successful.

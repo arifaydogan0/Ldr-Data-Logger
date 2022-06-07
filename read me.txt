@@ -1,0 +1,6 @@
+AÇIKLAMA: Kapalý seralarda hassas bazý bitkilerin yetiþtirilmesinde kullanýlan yapay aydýnlatma sistemine data üretmek amacýyla 
+sürekli ortamdaki ýþýk akýsýný ölçen ve raporlayan kontrol devresi.
+
+AMAÇ: Çiçek ve seracýlýkta kullanýlmak üzere kurulan yapay aydýnlatma sisteminin kontrol devresi.
+
+EKÝPMAN: (CCS C, Proteus, 18F877A Pic Microcontroller)
