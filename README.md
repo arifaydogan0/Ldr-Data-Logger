@@ -10,7 +10,7 @@ Yapay aydınlatma kullanılan hassas sera bitkilerinin aydınlatma sistemlerini 
 J1 portuna takılan lcd ekran modülü ile kontroller izlenebilir, hdr6 portu ile programda güncelleme yapılabilir.
 </li>
 <li>
-Diğer hdr portları ile ekstra çıkışlar tanımlanarak ek bir modül ile aydınlatma gibi sistemler kontrol edilebilir.
+Diğer hdr portları ile ekstra çıkışlar tanımlanarak ek bir modül ile aydınlatma gibi sistemler otomasyona bağlanabilir.
 </li>
 
 <br>
