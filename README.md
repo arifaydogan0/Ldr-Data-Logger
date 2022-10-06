@@ -13,7 +13,7 @@ J1 portuna takılan lcd ekran modülü ile kontroller izlenebilir, hdr6 portu il
 Diğer hdr portları ile ekstra çıkışlar tanımlanarak ek bir modül ile aydınlatma gibi sistemler otomasyona bağlanabilir.
 </li>
 
-<br>
+<br> 
 <br>
 <br>
 <br>
